@@ -1,0 +1,80 @@
+# alias
+## firefox
+alias firefox="open -a Firefox"
+## ls
+alias la='ls -alGF'
+alias ll='ls -lGF'
+alias ls='ls -GF'
+## exit
+alias x='exit'
+
+# zsh color
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# brew 補完(zsh-completions))
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+  autoload -Uz compinit && compinit
+fi
+
+# コマンドのスペルミスの修正
+setopt correct
+ 
+# prompt
+PROMPT="%F{white}[ %n : %~ ]%f"$'\n'"$ "
+
+# コマンドを即認識
+zstyle ":completion:*:commands" rehash 1
+
+# history
+## 引数でhistoryのgrepを行う
+alias his='history | grep'
+## プロンプト複数起動時のhistory共有
+setopt share_history
+## 重複するコマンドのhistory削除
+setopt hist_ignore_all_dups
+## メモリに保存される履歴の件数
+export HISTSIZE=1000
+## 履歴ファイルに保存される履歴の件数
+export SAVEHIST=10000
+
+# cd
+## cd -で以前移動したディレクトリを表示
+setopt auto_pushd
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# goenv (not brew)
+##export GOENV_ROOT="$HOME/.goenv"
+##export PATH="$GOENV_ROOT/bin:$PATH"
+##eval "$(goenv init -)"
+# go
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
+# my_shell_script
+## cnt file num
+alias cntf="bash $HOME/.local/shell_script/cnt_flie_num/cnt_file_num.sh"
+
+#tkinter (Python)
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+
+# discord
+## discord file send
+alias discord_send_file='zsh $HOME/.discord_send_file/script.sh'
+
+## wrapper discord.sh
+DISCORD_WEBHOOK_URL=`cat $HOME/.discord_send_file/settings.json | jq '.webhook_url'`
+DISCORD_WEBHOOK_URL=`echo ${DISCORD_WEBHOOK_URL} | sed -e 's/\"//g'`
+alias discord='bash $HOME/.discord_send_file/discord.sh --webhook-url=$DISCORD_WEBHOOK_URL'
+
+
+# TeX
+export PATH=/usr/local/texlive/2022/bin/universal-darwin:$PATH
