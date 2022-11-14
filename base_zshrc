@@ -1,3 +1,5 @@
+#echo 'load base_zshrc'
+
 # alias
 ## firefox
 alias firefox="open -a Firefox"
@@ -21,7 +23,7 @@ fi
 
 # コマンドのスペルミスの修正
 setopt correct
- 
+
 # prompt
 PROMPT="%F{white}[ %n : %~ ]%f"$'\n'"$ "
 
@@ -44,37 +46,15 @@ export SAVEHIST=10000
 ## cd -で以前移動したディレクトリを表示
 setopt auto_pushd
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# goenv (not brew)
-##export GOENV_ROOT="$HOME/.goenv"
-##export PATH="$GOENV_ROOT/bin:$PATH"
-##eval "$(goenv init -)"
-# go
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
-# my_shell_script
-## cnt file num
-alias cntf="bash $HOME/.local/shell_script/cnt_flie_num/cnt_file_num.sh"
-
-#tkinter (Python)
-export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
-
-# discord
-## discord file send
-alias discord_send_file='zsh $HOME/.discord_send_file/script.sh'
-
-## wrapper discord.sh
-DISCORD_WEBHOOK_URL=`cat $HOME/.discord_send_file/settings.json | jq '.webhook_url'`
-DISCORD_WEBHOOK_URL=`echo ${DISCORD_WEBHOOK_URL} | sed -e 's/\"//g'`
-alias discord='bash $HOME/.discord_send_file/discord.sh --webhook-url=$DISCORD_WEBHOOK_URL'
-
-
 # TeX
 export PATH=/usr/local/texlive/2022/bin/universal-darwin:$PATH
+
+# split zshrc
+## python
+source $HOME/.mac_local_zshrc/split_zshrc/python_zshrc
+
+## shell script
+source $HOME/.mac_local_zshrc/split_zshrc/shell_script_zshrc
+
+## go
+source $HOME/.mac_local_zshrc/split_zshrc/go_zshrc

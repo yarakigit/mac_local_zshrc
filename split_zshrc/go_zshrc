@@ -1,0 +1,4 @@
+#echo 'load go_zshrc'
+
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
