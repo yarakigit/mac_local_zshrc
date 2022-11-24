@@ -11,3 +11,7 @@ alias discord_send_file='zsh $HOME/.discord_send_file/script.sh'
 DISCORD_WEBHOOK_URL=`cat $HOME/.discord_send_file/settings.json | jq '.webhook_url'`
 DISCORD_WEBHOOK_URL=`echo ${DISCORD_WEBHOOK_URL} | sed -e 's/\"//g'`
 alias discord='bash $HOME/.discord_send_file/discord.sh --webhook-url=$DISCORD_WEBHOOK_URL'
+
+## GAS Google translate
+alias trans_eng='zsh $HOME/.gas_google_trans_shell_script/trans_eng.sh'
+alias trans_jp='zsh $HOME/.gas_google_trans_shell_script/trans_jp.sh'
