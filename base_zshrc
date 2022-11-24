@@ -1,8 +1,6 @@
 #echo 'load base_zshrc'
 
 # alias
-## firefox
-alias firefox="open -a Firefox"
 ## ls
 alias la='ls -alGF'
 alias ll='ls -lGF'
@@ -46,10 +44,13 @@ export SAVEHIST=10000
 ## cd -で以前移動したディレクトリを表示
 setopt auto_pushd
 
-# TeX
-export PATH=/usr/local/texlive/2022/bin/universal-darwin:$PATH
-
 # split zshrc
+## TeX
+source $HOME/.mac_local_zshrc/split_zshrc/tex_zshrc
+
+## open command alias
+source $HOME/.mac_local_zshrc/split_zshrc/open_alias_zshrc
+
 ## python
 source $HOME/.mac_local_zshrc/split_zshrc/python_zshrc
 
