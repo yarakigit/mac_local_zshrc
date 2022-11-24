@@ -1,0 +1,4 @@
+#echo 'load open_alias_zshrc'
+
+## firefox
+alias firefox="open -a Firefox"
