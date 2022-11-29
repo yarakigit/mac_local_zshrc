@@ -1,7 +1,7 @@
 #echo 'load shell_script_zshrc'
 
 ## cnt file num
-alias cntf="bash $HOME/.local/shell_script/cnt_flie_num/cnt_file_num.sh"
+alias cntf="bash $HOME/.local/shell_script/cnt_file_num/cnt_file_num.sh"
 
 ## discord
 ### discord file send
