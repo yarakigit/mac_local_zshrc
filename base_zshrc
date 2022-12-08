@@ -22,9 +22,6 @@ fi
 # コマンドのスペルミスの修正
 setopt correct
 
-# prompt
-PROMPT="%F{white}[ %n : %~ ]%f"$'\n'"$ "
-
 # コマンドを即認識
 zstyle ":completion:*:commands" rehash 1
 
@@ -59,3 +56,9 @@ source $HOME/.mac_local_zshrc/split_zshrc/shell_script_zshrc
 
 ## go
 source $HOME/.mac_local_zshrc/split_zshrc/go_zshrc
+
+## git-completion & git-prompt
+source $HOME/.mac_local_zshrc/split_zshrc/git_zshrc
+
+## prompt
+PS1="%F{white}[ %n : %~ ]%f"'$(__git_ps1 " (%s)")'$'\n'"$ "
