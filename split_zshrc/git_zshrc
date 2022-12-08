@@ -1,0 +1,31 @@
+# git-completion
+fpath=($HOME/.zsh/git $fpath)
+autoload -U compinit
+compinit -u
+
+# git-prompt
+source ~/.zsh/git/git-prompt.sh
+setopt PROMPT_SUBST
+
+######################
+## settings script ###
+######################
+## if [ -d $HOME/.zsh ]; then
+##     echo "$HOME/.zsh" exist
+## else
+##     echo "$HOME/.zsh" not found
+##     mkdir $HOME/.zsh
+## fi
+## if [ -d $HOME/.zsh/git ]; then
+##     echo "$HOME/.zsh/git" exist
+## else
+##     echo "$HOME/.zsh/git" not found
+##     mkdir $HOME/.zsh/git
+## fi
+## 
+## curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+## curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+## curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+## mv git-completion.bash $HOME/.zsh/git
+## mv git-completion.zsh $HOME/.zsh/git/_git
+## mv git-prompt.sh $HOME/.zsh/git
