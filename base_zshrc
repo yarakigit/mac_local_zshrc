@@ -61,4 +61,5 @@ source $HOME/.mac_local_zshrc/split_zshrc/go_zshrc
 source $HOME/.mac_local_zshrc/split_zshrc/git_zshrc
 
 ## prompt
-PS1="%F{white}[ %n : %~ ]%f"'$(__git_ps1 " (%s)")'$'\n'"$ "
+###export PS1='%F{white}%U %n [ %m : %~ ]%u%f'$'\n''%F{white}$ %f' # default
+export PS1='%F{white}%U %n [ %m : %~ ]%u%f''%F{white} $(__git_ps1 "(%s)") %f'$'\n''%F{white}$ %f' # show git branch
