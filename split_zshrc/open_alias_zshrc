@@ -2,3 +2,6 @@
 
 ## firefox
 alias firefox="open -a Firefox"
+
+## Chrome
+alias chrome="open -a Google\ Chrome"
