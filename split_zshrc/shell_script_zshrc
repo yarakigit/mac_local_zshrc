@@ -1,10 +1,12 @@
 #echo 'load shell_script_zshrc'
 
 ## cnt file num
+### https://github.com/yarakigit/cnt_file_num
 alias cntf="bash $HOME/.local/shell_script/cnt_file_num/cnt_file_num.sh"
 
 ## discord
 ### discord file send
+### https://github.com/yarakigit/discord_send_file
 alias discord_send_file='zsh $HOME/.discord_send_file/script.sh'
 
 ### wrapper discord.sh
@@ -13,5 +15,10 @@ DISCORD_WEBHOOK_URL=`echo ${DISCORD_WEBHOOK_URL} | sed -e 's/\"//g'`
 alias discord='bash $HOME/.discord_send_file/discord.sh --webhook-url=$DISCORD_WEBHOOK_URL'
 
 ## GAS Google translate
+### https://github.com/yarakigit/gas_google_trans_shell_script
 alias trans_eng='zsh $HOME/.gas_google_trans_shell_script/trans_eng.sh'
 alias trans_jp='zsh $HOME/.gas_google_trans_shell_script/trans_jp.sh'
+
+## clean browser downloads home repo
+### https://github.com/yarakigit/clean_home_downloads_repo
+alias clean_downloads='zsh $HOME/.clean_home_downloads_repo/clean_script.sh'
