@@ -1,7 +1,7 @@
 #echo 'load base_zprofile'
-MacOS_flag=0
-WSL_flag=0
-LINUX_flag=0
+export MacOS_flag=0
+export WSL_flag=0
+export LINUX_flag=0
 if [[ $OSTYPE = "darwin"* ]]; then
     MacOS_flag=1
 elif [[ $OSTYPE = "linux-gnu" ]]; then
