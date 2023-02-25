@@ -17,9 +17,9 @@ fi
 
 # alias
 ## ls
-alias la='ls -alGF'
-alias ll='ls -lGF'
-alias ls='ls -GF'
+alias la='ls --color -alGF'
+alias ll='ls --color -lGF'
+alias ls='ls --color -GF'
 ## exit
 alias x='exit'
 
@@ -27,6 +27,11 @@ alias x='exit'
 ## MacOS
 if [ $MacOS_flag -eq 1 ];then
   export LSCOLORS=gxfxcxdxbxegedabagacad
+else
+  # settings file
+  ## https://github.com/seebi/dircolors-solarized
+  #### use theme : dircolors.256dark
+  eval "$(dircolors -b $HOME/.dircolors)"
 fi
 
 # brew 補完(zsh-completions))
