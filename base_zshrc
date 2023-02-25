@@ -60,8 +60,10 @@ setopt auto_pushd
 ## TeX
 source $HOME/.mac_local_zshrc/split_zshrc/tex_zshrc
 
-## open command alias
-source $HOME/.mac_local_zshrc/split_zshrc/open_alias_zshrc
+## open command alias (MacOS)
+if [ $MacOS_flag -eq 1 ];then
+  source $HOME/.mac_local_zshrc/split_zshrc/open_alias_zshrc
+fi
 
 ## python
 source $HOME/.mac_local_zshrc/split_zshrc/python_zshrc
