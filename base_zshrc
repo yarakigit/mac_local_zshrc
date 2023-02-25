@@ -24,14 +24,20 @@ alias ls='ls -GF'
 alias x='exit'
 
 # zsh color
-export LSCOLORS=gxfxcxdxbxegedabagacad
+## MacOS
+if [ $MacOS_flag -eq 1 ];then
+  export LSCOLORS=gxfxcxdxbxegedabagacad
+fi
 
 # brew 補完(zsh-completions))
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
-  autoload -Uz compinit && compinit
+## MacOS
+if [ $MacOS_flag -eq 1 ];then
+  if type brew &>/dev/null
+  then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+    autoload -Uz compinit && compinit
+  fi
 fi
 
 # コマンドのスペルミスの修正
