@@ -65,6 +65,11 @@ if [ $MacOS_flag -eq 1 ];then
   source $HOME/.mac_local_zshrc/split_zshrc/open_alias_zshrc
 fi
 
+## windows program alias (WSL)
+if [ $WSL_flag -eq 1 ];then
+  source $HOME/.mac_local_zshrc/split_zshrc/windows_program_alias_zshrc
+fi
+
 ## python
 source $HOME/.mac_local_zshrc/split_zshrc/python_zshrc
 

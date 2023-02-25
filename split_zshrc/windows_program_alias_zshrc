@@ -1,0 +1,5 @@
+# Chrome
+## Reference
+#### 1:WSLからHTMLファイルをChromeで開く, https://ludwig125.hatenablog.com/entry/2021/02/09/063639
+#### 2:Is there a way to open a file in a browser from WSL? e.g. the command `open foo.html` in any Unix, https://www.reddit.com/r/bashonubuntuonwindows/comments/8teo9i/is_there_a_way_to_open_a_file_in_a_browser_from/
+alias chrome='(){/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe $(wslpath -w $(realpath $1))}'
