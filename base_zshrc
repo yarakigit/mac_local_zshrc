@@ -93,6 +93,9 @@ source $HOME/.mac_local_zshrc/split_zshrc/go_zshrc
 ## git-completion & git-prompt
 source $HOME/.mac_local_zshrc/split_zshrc/git_zshrc
 
+## zsh complement (zsh 補完)
+source $HOME/.mac_local_zshrc/split_zshrc/complement_zshrc
+
 ## prompt
 ###export PS1='%F{white}%U %n [ %m : %~ ]%u%f'$'\n''%F{white}$ %f' # default
 export PS1='%F{white}%U %n [ %m : %~ ]%u%f''%F{white} $(__git_ps1 "(%s)") %f'$'\n''%F{white}$ %f' # show git branch
