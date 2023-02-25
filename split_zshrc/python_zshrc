@@ -1,10 +1,12 @@
 #echo 'load python_zshrc'
 
-#tkinter (Python)
-export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+#tkinter MacOS (Python)
+if [ $MacOS_flag -eq 1 ];then
+    export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
+    export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+    export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
