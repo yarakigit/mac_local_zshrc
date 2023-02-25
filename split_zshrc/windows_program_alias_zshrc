@@ -1,3 +1,7 @@
+# Explorer
+## alias open
+alias open=explorer.exe
+
 # Chrome
 ## Reference
 #### 1:WSLからHTMLファイルをChromeで開く, https://ludwig125.hatenablog.com/entry/2021/02/09/063639
