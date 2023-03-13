@@ -23,6 +23,7 @@ source $HOME/.mac_local_zshrc/base_zprofile
 &emsp;&emsp;┣ :book: [go_zshrc](./split_zshrc/go_zshrc)<br>
 &emsp;&emsp;┣ :book: [open_alias_zshrc](./split_zshrc/open_alias_zshrc)<br>
 &emsp;&emsp;┣ :book: [python_zshrc](./split_zshrc/python_zshrc)<br>
+&emsp;&emsp;┣ :book: [shared_fuction_zshrc](./split_zshrc/shared_fuction_zshrc)<br>
 &emsp;&emsp;┣ :book: [shell_script_zshrc](./split_zshrc/shell_script_zshrc)<br>
 &emsp;&emsp;┣ :book: [tex_zshrc](./split_zshrc/tex_zshrc) <br>
 &emsp;&emsp;┗ :book: [windows_program_alias_zshrc](./split_zshrc/windows_program_alias_zshrc)<br>
