@@ -1,17 +1,8 @@
 #echo 'load base_zprofile'
-export MacOS_flag=0
-export WSL_flag=0
-export LINUX_flag=0
-if [[ $OSTYPE = "darwin"* ]]; then
-    MacOS_flag=1
-elif [[ $OSTYPE = "linux-gnu" ]]; then
-    if [[ $(uname -r) == *"microsoft"* ]]; then
-        WSL_flag=1
-    else
-        LINUX_flag=1
-    fi
-fi
-#echo MacOS_flag $MacOS_flag WSL_flag $WSL_flag LINUX_flag $LINUX_flag
+
+# os
+source $HOME/.mac_local_zshrc/split_zshrc/shared_fuction_zshrc
+export_os_type_func
 
 if [ $MacOS_flag -eq 1 ];then
     eval "$(/opt/homebrew/bin/brew shellenv)"

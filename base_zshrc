@@ -1,19 +1,8 @@
 #echo 'load base_zshrc'
 
 # os
-export MacOS_flag=0
-export WSL_flag=0
-export LINUX_flag=0
-if [[ $OSTYPE = "darwin"* ]]; then
-    MacOS_flag=1
-elif [[ $OSTYPE = "linux-gnu" ]]; then
-    if [[ $(uname -r) == *"microsoft"* ]]; then
-        WSL_flag=1
-    else
-        LINUX_flag=1
-    fi
-fi
-#echo MacOS_flag $MacOS_flag WSL_flag $WSL_flag LINUX_flag $LINUX_flag
+source $HOME/.mac_local_zshrc/split_zshrc/shared_fuction_zshrc
+export_os_type_func
 
 # ssh session
 export REMOTE_SSH_FLAG=0
