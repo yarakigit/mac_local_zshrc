@@ -15,6 +15,13 @@ elif [[ $OSTYPE = "linux-gnu" ]]; then
 fi
 #echo MacOS_flag $MacOS_flag WSL_flag $WSL_flag LINUX_flag $LINUX_flag
 
+# ssh session
+export REMOTE_SSH_FLAG=0
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  REMOTE_SSH_FLAG=1
+fi
+#echo REMOTE_SSH_FLAG $REMOTE_SSH_FLAG
+
 # alias
 ## ls
 alias la='ls --color -alGF'
@@ -107,4 +114,9 @@ source $HOME/.mac_local_zshrc/split_zshrc/complement_zshrc
 
 ## prompt
 ###export PS1='%F{white}%U %n [ %m : %~ ]%u%f'$'\n''%F{white}$ %f' # default
-export PS1='%F{white}%U %n [ %m : %~ ]%u%f''%F{white} $(__git_ps1 "(%s)") %f'$'\n''%F{white}$ %f' # show git branch
+if [[ $REMOTE_SSH_FLAG -eq 1 ]]; then ### if ssh session prmopt yellow
+  export PS1='%F{blue}%U %n [ %m : %~ ]%u%f''%F{white} $(__git_ps1 "(%s)") %f'$'\n''%F{white}$ %f' # show git branch
+else ### if not ssh session prmopt white
+  export PS1='%F{white}%U %n [ %m : %~ ]%u%f''%F{white} $(__git_ps1 "(%s)") %f'$'\n''%F{white}$ %f' # show git branch
+fi
+
