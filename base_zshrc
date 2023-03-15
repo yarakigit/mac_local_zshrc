@@ -1,7 +1,10 @@
 #echo 'load base_zshrc'
 
+# PATH of this zshrc settings dir
+PATH_ZSHRC_SETTINGS_DIR=.mac_local_zshrc
+
 # os
-source $HOME/.mac_local_zshrc/split_zshrc/shared_fuction_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/shared_fuction_zshrc
 export_os_type_func
 
 # ssh session
@@ -74,32 +77,32 @@ setopt auto_pushd
 
 # split zshrc
 ## TeX
-source $HOME/.mac_local_zshrc/split_zshrc/tex_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/tex_zshrc
 
 ## open command alias (MacOS)
 if [ $MacOS_flag -eq 1 ];then
-  source $HOME/.mac_local_zshrc/split_zshrc/open_alias_zshrc
+  source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/open_alias_zshrc
 fi
 
 ## windows program alias (WSL)
 if [ $WSL_flag -eq 1 ];then
-  source $HOME/.mac_local_zshrc/split_zshrc/windows_program_alias_zshrc
+  source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/windows_program_alias_zshrc
 fi
 
 ## python
-source $HOME/.mac_local_zshrc/split_zshrc/python_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/python_zshrc
 
 ## shell script
-source $HOME/.mac_local_zshrc/split_zshrc/shell_script_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/shell_script_zshrc
 
 ## go
-source $HOME/.mac_local_zshrc/split_zshrc/go_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/go_zshrc
 
 ## git-completion & git-prompt
-source $HOME/.mac_local_zshrc/split_zshrc/git_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/git_zshrc
 
 ## zsh complement (zsh 補完)
-source $HOME/.mac_local_zshrc/split_zshrc/complement_zshrc
+source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/complement_zshrc
 
 ## prompt
 ###export PS1='%F{white}%U %n [ %m : %~ ]%u%f'$'\n''%F{white}$ %f' # default
