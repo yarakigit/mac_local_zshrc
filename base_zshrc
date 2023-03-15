@@ -1,10 +1,10 @@
 #echo 'load base_zshrc'
 
-# PATH of this zshrc settings dir
-PATH_ZSHRC_SETTINGS_DIR=.mac_local_zshrc
-
-# os
-source $HOME/$PATH_ZSHRC_SETTINGS_DIR/split_zshrc/shared_fuction_zshrc
+# zshrc shared function (load init first)
+source $HOME/.mac_local_zshrc/split_zshrc/shared_fuction_zshrc
+## PATH of this zshrc settings dir
+export_path_zshrc_settings_dir
+## os
 export_os_type_func
 
 # ssh session
